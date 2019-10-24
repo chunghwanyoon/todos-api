@@ -1,4 +1,9 @@
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'spec_helper'
+require 'rails_helper'
 require 'database_cleaner'
+ENV['RAILS_ENV'] ||= 'test'
+
 
 # [...]
 # configure shoulda matchers to use rspec as the test framework and full matcher libraries for rails
@@ -30,10 +35,6 @@ RSpec.configure do |config|
   # [...]
 end
 
-
-# # This file is copied to spec/ when you run 'rails generate rspec:install'
-# require 'spec_helper'
-# ENV['RAILS_ENV'] ||= 'test'
 
 # require File.expand_path('../config/environment', __dir__)
 

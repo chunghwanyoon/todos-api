@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 # Test suite for the item model
-RSpec.describe Item, type :model do
+RSpec.describe Item, type: :model do
   # Association test
   # ensure an item record belongs to a single todo record
   it { should belongs_to(:todo) }

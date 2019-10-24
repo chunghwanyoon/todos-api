@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# REFERENCE
+[SCOTCH](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one): Build a RESTful JSON API With Rails

@@ -37,6 +37,24 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  # [...]
+  # add 'FactoryBot' methods
+  config.include FactoryBot::Syntax::methods
+
+  # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  # start the transaction strategy as examples are run
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+  # [...]
+
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
   # compatibility in RSpec 3). It causes shared context metadata to be

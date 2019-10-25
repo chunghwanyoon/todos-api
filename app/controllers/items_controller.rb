@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
     # GET '/todos/:todo_id/items'
     def index
-        json_reesponse(@todo.items)
+        json_response(@todo.items)
     end
 
     # GET /todos/:todo_id/items/:id
